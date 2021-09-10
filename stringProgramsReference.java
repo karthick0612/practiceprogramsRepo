@@ -1,4 +1,4 @@
-package PracticeProgramsForReference;
+package PracticeProgramsForReference.StringRelatedPrograms;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,9 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class stringProgramsReference {
-
     public static void main(String[] args){
-
 
         // String Reverse
         String str1 = "kkfa131242ff";
@@ -18,6 +16,7 @@ public class stringProgramsReference {
         for(int i = arr.length-1 ; i >= 0; i--){
             System.out.println(arr[i]);
         }
+
 
         // String Reverse Word by Word
         String words = "Rest Assured API Automation.";
@@ -33,6 +32,7 @@ public class stringProgramsReference {
         Map<Character,Integer> duplicateCountMap = new HashMap<>();
         int count = 1;
         for(int i = 0; i <= stringValueCharacters.length-1; i++){
+            System.out.println(i);
             if(duplicateCountMap.keySet().contains(stringValueCharacters[i])){
                 duplicateCountMap.put(stringValueCharacters[i],duplicateCountMap.get(stringValueCharacters[i])+1);
             }else{
@@ -71,5 +71,18 @@ public class stringProgramsReference {
         while(m.find()) {
             System.out.println(m.group());
         }
+
+
+        // String Swap without using temporary Variables
+        String a = "RestAssuredAutomation";
+        String b = "Assured";
+        String str = a.substring(0,6);
+        a = a + b;
+//        System.out.println(a.length() - b.length());
+        b = a.substring(0, a.length() - b.length());
+//        System.out.println(b.length());
+        a = a.substring(b.length());
+        System.out.println(a);
+        System.out.println(b);
     }
 }
